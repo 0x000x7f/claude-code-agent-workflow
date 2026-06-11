@@ -1,0 +1,29 @@
+# Local Claude/Codex state (never commit)
+.claude/settings.local.json
+.claude/projects/
+.claude/**/memory/
+.claude/**/logs/
+.claude/**/cache/
+
+# Local environment
+.env
+.env.*
+*.local
+*.secret
+*.token
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Generated artifacts from real runs (examples/ has curated samples instead)
+docs/refactor-plan.md
+docs/handoff/HANDOFF-*.md
+
+# Build artifacts
+target/
+node_modules/
+dist/
+build/
