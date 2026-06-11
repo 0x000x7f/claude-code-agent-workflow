@@ -1,5 +1,7 @@
 # Claude Code Multi-Agent Workflow
 
+> **Status**: experimental, locally tested template. Not an official Anthropic / OpenAI project.
+
 > **EN** — A portable multi-agent development workflow template for Claude Code.
 > The main session acts as PM/architect and routes work by complexity: simple bulk edits go to a
 > Sonnet subagent, multi-file implementation to an Opus subagent, acceptance review to a
@@ -7,7 +9,7 @@
 > self-contained Markdown handoff documents. Built on three principles: subagents are for
 > context-pollution control (not for everything), context is shared through files (not chat
 > memory), and expensive models are reserved for high-leverage work. The template itself was
-> verified with an adversarial multi-agent review (18 findings → 6 fixes) and per-agent smoke tests.
+> tested with an adversarial multi-agent review (18 findings → 6 fixes) and per-agent smoke tests.
 
 Claude Code 用のマルチエージェント分業ワークフロー・テンプレートです。
 メインセッション（PM / 設計役）が作業の複雑度を判断し、実装・検収・外部ツールへルーティングします。
