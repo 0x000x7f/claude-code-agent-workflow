@@ -11,6 +11,22 @@
 > memory), and expensive models are reserved for high-leverage work. The template itself was
 > tested with an adversarial multi-agent review (18 findings → 6 fixes) and per-agent smoke tests.
 
+## English overview
+
+This repository packages a practical workflow for using Claude Code as a coordinating agent rather than a single all-purpose worker.
+It separates planning, implementation, review, and cross-tool handoff while keeping the shared context in Markdown files.
+
+What it provides:
+
+- **Claude Code subagents** for simple implementation, heavier multi-file implementation, and acceptance review
+- **Slash commands** for codebase analysis, phase-based implementation, diff review, and handoff document generation
+- **File-based context sharing** through `docs/refactor-plan.md` and `docs/handoff/HANDOFF-*.md`
+- **Codex / Cursor handoff support** through self-contained Markdown task documents and `AGENTS.md`
+- **Safety-oriented defaults**: small diffs, no unnecessary subagent use, reviewer-based acceptance checks, and explicit limitations
+
+Use this template when a coding task is large enough that dumping all research, planning, implementation, and review into one chat would pollute the main context.
+For small fixes or one-off questions, the main session should handle the task directly.
+
 Claude Code 用のマルチエージェント分業ワークフロー・テンプレートです。
 メインセッション（PM / 設計役）が作業の複雑度を判断し、実装・検収・外部ツールへルーティングします。
 
