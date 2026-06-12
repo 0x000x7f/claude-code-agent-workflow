@@ -136,8 +136,15 @@ Global workflow rules: @rules/agent-workflow.md
 - [x] Claude Code subagent workflow
 - [x] Markdown handoff for Codex / Cursor
 - [ ] Codex CLI での実運用検証
-- [ ] Codex CLI の MCP サーバー化（[docs/codex-mcp-plan.md](docs/codex-mcp-plan.md)）
+- [x] Codex CLI の MCP サーバー化 — Phase 1（read-only `codex_plan`）を [codex-cli-mcp-bridge](https://github.com/0x000x7f/codex-cli-mcp-bridge) として実装・検証済み（計画: [docs/codex-mcp-plan.md](docs/codex-mcp-plan.md)）
 - [ ] クロスエージェント自動レビューループ
+
+## Related project
+
+- [codex-cli-mcp-bridge](https://github.com/0x000x7f/codex-cli-mcp-bridge) —
+  `/handoff` 文書の手動運搬を自動化する実験的 MCP ブリッジ。Codex CLI を読み取り専用ツール
+  （`codex_plan`）として Claude Code から呼び出す。本テンプレートの Markdown handoff 方式は
+  ブリッジのフォールバックとして維持される
 
 ## License
 
