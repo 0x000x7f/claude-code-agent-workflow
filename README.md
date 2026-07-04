@@ -138,6 +138,12 @@ Global workflow rules: @rules/agent-workflow.md
 - [ ] Codex CLI での実運用検証
 - [x] Codex CLI の MCP サーバー化 — Phase 1（read-only `codex_plan`）を [codex-cli-mcp-bridge](https://github.com/0x000x7f/codex-cli-mcp-bridge) として実装・検証済み（計画: [docs/codex-mcp-plan.md](docs/codex-mcp-plan.md)）
 - [ ] クロスエージェント自動レビューループ
+- [ ] usage limit の自律ハンドオフ（codex-handoff）の repo 化・多機体展開（計画: [docs/codex-handoff-plan.md](docs/codex-handoff-plan.md)）
+- [ ] `~/.claude` 設定の機体間同期 — 専用 dotfiles repo に集約し、本 repo はそのコンポーネントとして co-evolve（計画: [docs/config-sync-plan.md](docs/config-sync-plan.md)）
+
+> 本リポジトリは、将来的に `~/.claude` 全体を管理する dotfiles repo の1コンポーネントとなる想定です。
+> agents / commands / rules の source of truth は本リポジトリに置き続けます。詳細は
+> [docs/config-sync-plan.md](docs/config-sync-plan.md) を参照。
 
 ## Related project
 
