@@ -58,6 +58,12 @@ pwsh ./install.ps1
         + 認証は各機体で手動（codex login 等）。定義は配る・秘密は配らない
 ```
 
+## 実装済みの先行部品
+
+- **`scripts/doctor.ps1`(2026-07-06)** — 機体パリティ監査。コアツール(claude/node/git/gh/codex/gitleaks/7z)、
+  `~/.claude` 配布物、codex-handoff の配線(+ hook パスが自機体のユーザー名かの検査)、vault の
+  hooksPath/autocrlf/週次タスクを PASS/WARN/FAIL で出す。dotfiles repo 新設時に bootstrap へ同梱・移設する。
+
 ## 未解決の論点
 
 - **dotfiles repo 名**（候補: `claude-dotfiles` / `claude-config` / `dotfiles`）。
