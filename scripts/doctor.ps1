@@ -38,7 +38,7 @@ $dotc = Join-Path $HOME '.claude'
 foreach ($d in @('agents', 'commands', 'rules')) {
   Check "~/.claude/$d" ((Test-Path (Join-Path $dotc $d)) -and ((Get-ChildItem (Join-Path $dotc $d) -ErrorAction SilentlyContinue).Count -gt 0)) "agent-workflow の install 未実施?"
 }
-foreach ($f in @('agents\reviewer.md', 'commands\handoff.md', 'commands\review-diff.md', 'rules\agent-workflow.md')) {
+foreach ($f in @('agents\reviewer.md', 'commands\handoff.md', 'commands\review-diff.md', 'rules\agent-workflow.md', 'rules\output-style.md')) {
   Check "  $f" (Test-Path (Join-Path $dotc $f)) "missing"
 }
 
