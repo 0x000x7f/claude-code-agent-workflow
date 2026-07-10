@@ -2,6 +2,11 @@
 
 > **Status**: experimental, locally tested template. Not an official Anthropic / OpenAI project.
 
+> **Umbrella**: this repo is one component of [claude-dotfiles](https://github.com/0x000x7f/claude-dotfiles),
+> which syncs the whole portable `~/.claude` config across machines. This repo remains the
+> **source of truth for `agents/`, `commands/` (analyze-codebase, handoff, implement-phase, review-diff) and `rules/`**;
+> the dotfiles bootstrap pulls it in by reference (no duplication).
+
 > **EN** — A portable multi-agent development workflow template for Claude Code.
 > The main session acts as PM/architect and routes work by complexity: simple bulk edits go to a
 > Sonnet subagent, multi-file implementation to an Opus subagent, acceptance review to a

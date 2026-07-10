@@ -1,6 +1,8 @@
 # Roadmap: `~/.claude` 設定を機体間で同期する（別 dotfiles repo・計画）
 
-> このドキュメントは計画メモであり、未実装。
+> **2026-07-08 実装済み**: dotfiles repo = [claude-dotfiles](https://github.com/0x000x7f/claude-dotfiles)（private）。
+> install.ps1（A展開 + settings.json 管理キーマージ + 本repo参照取り込み + C充足チェック、冪等）まで完了・Desktop 実機検証済み。
+> 実装指示書: `docs/dotfiles-repo-handoff.md`。以下は当時の計画メモ（設計判断の記録として保持）。
 > 決定事項: **`~/.claude` の可搬設定は専用 dotfiles repo に集約**する。本リポジトリ
 > (`claude-code-agent-workflow`) はその中の1コンポーネントとして **co-evolve** し、両者の
 > README に相互の関係を明記する。

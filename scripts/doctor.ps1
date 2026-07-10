@@ -42,6 +42,17 @@ foreach ($f in @('agents\reviewer.md', 'commands\handoff.md', 'commands\review-d
   Check "  $f" (Test-Path (Join-Path $dotc $f)) "missing"
 }
 
+# --- 2.5 dotfiles(claude-dotfiles) 展開物のパリティ ---
+Write-Host "`n[claude-dotfiles]"
+Check "commands\codex-handoff.md" (Test-Path (Join-Path $dotc 'commands\codex-handoff.md')) "dotfiles install 未実施?" -WarnOnly
+foreach ($s in @('gpt', 'zenn', 'memory-dream')) {
+  Check "skills\$s" (Test-Path (Join-Path $dotc "skills\$s\SKILL.md")) "dotfiles install 未実施?" -WarnOnly
+}
+$setRaw = Get-Content (Join-Path $dotc 'settings.json') -Raw -ErrorAction SilentlyContinue
+Check "settings.json cleanupPeriodDays" ([bool]($setRaw -match '"cleanupPeriodDays"')) "transcripts が30日で消える(dotfiles install で設定)"
+Check "task claude-obsidian-import" ([bool](schtasks /Query /TN 'claude-obsidian-import' 2>$null)) "vault の日次取り込み未登録(AUTOMATION_RUNBOOK.md)" -WarnOnly
+Check "task obsidian-nightly-classify-codex" ([bool](schtasks /Query /TN 'obsidian-nightly-classify-codex' 2>$null)) "夜間分類未登録(AUTOMATION_RUNBOOK.md)" -WarnOnly
+
 # --- 3. codex-handoff(導入機体のみ。未導入は WARN) ---
 Write-Host "`n[codex-handoff]"
 $chScripts = Join-Path $dotc 'scripts\codex-handoff\guard.mjs'
